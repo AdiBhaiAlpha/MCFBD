@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muslim Cyber Force BD</title>
+    <link rel="icon" href="https://i.ibb.co.com/F05pzbn/1732028621600.jpg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #34495e;
+            --background-color: #f0f4f8;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            background: linear-gradient(135deg, #ffffff, #f0f4f8);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .designer-credit {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        color: #f0f4f8;
+        }
+        
+        .designer-credit a {
+        color: #4a90e2;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+        
+        .designer-credit a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background: url('https://source.unsplash.com/random/1600x900/?cybersecurity') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .services {
+            padding: 100px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .blog {
+            padding: 100px 0;
+            background-color: var(--background-color);
+        }
+
+        .blog h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .blog-card.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .blog-content p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #3a7bd5;
+        }
+
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .app-download {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .app-download:hover {
+            background-color: #3a7bd5;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="https://i.ibb.co.com/mX9p4CS/1732028621600.jpg" alt="Muslim Cyber Force BD Logo">
+                <h1>Muslim Cyber Force BD</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home">হোম</a>
+                <a href="#services">সেবাসমূহ</a>
+                <a href="#blog">ব্লগ</a>
+                <a href="#contact">যোগাযোগ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>ডিজিটাল ফ্রন্টিয়ার সুরক্ষিত করুন</h2>
+                <p>আধুনিক সাইবার সুরক্ষা সমাধান দিয়ে আপনার অনলাইন উপস্থিতি রক্ষা করুন</p>
+                <a href="#contact" class="btn">শুরু করুন</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>আমাদের সেবাসমূহ</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>পেনিট্রেশন টেস্টিং</h3>
+                        <p>হ্যাকারদের আগে আপনার সিস্টেমের দুর্বলতাগুলি চিহ্নিত করুন।</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>সুরক্ষা অডিট</h3>
+                        <p>আপনার প্রতিষ্ঠানের সুরক্ষা অবস্থার বিস্তৃত মূল্যায়ন।</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>ঘটনা প্রতিক্রিয়া</h3>
+                        <p>সাইবার ঘটনা এবং লঙ্ঘনের দ্রুত ও কার্যকর প্রতিক্রিয়া।</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>সুরক্ষা প্রশিক্ষণ</h3>
+                        <p>সাইবার সুরক্ষা জ্ঞান এবং সেরা অনুশীলন দিয়ে আপনার দলকে শক্তিশালী করুন।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2>সাম্প্রতিক ইনসাইট</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3>সাইবার সুরক্ষায় AI এর উত্থান</h3>
+                            <p>সাইবার সুরক্ষা ক্ষেত্রে কৃত্রিম বুদ্ধিমত্তা কীভাবে বিপ্লব আনছে তা অন্বেষণ করুন।</p>
+                            <a href="#" class="read-more" data-post="ai-cybersecurity">আরও পড়ুন</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3>আপনার নেটওয়ার্ক সুরক্ষিত করার ৫টি অপরিহার্য পদক্ষেপ</h3>
+                            <p>সাইবার হুমকি থেকে আপনার প্রতিষ্ঠানের নেটওয়ার্ক রক্ষা করার মৌলিক পদ্ধতিগুলি শিখুন।</p>
+                            <a href="#" class="read-more" data-post="network-security">আরও পড়ুন</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3>এন্ড-টু-এন্ড এনক্রিপশনের গুরুত্ব</h3>
+                            <p>ট্রানজিটে সংবেদনশীল তথ্য রক্ষা করার জন্য এন্ড-টু-এন্ড এনক্রিপশন কেন গুরুত্বপূর্ণ তা আবিষ্কার করুন।</p>
+                            <a href="#" class="read-more" data-post="encryption">আরও পড়ুন</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">হোম</a>
+                <a href="#services">সেবাসমূহ</a>
+                <a href="#blog">ব্লগ</a>
+                <a href="#contact">যোগাযোগ</a>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com/groups/1173541943643369/" target="_blank" rel="noopener noreferrer" title="অফিসিয়াল ফেসবুক গ্রুপ">
+                    <i class="fab fa-facebook-square"></i> গ্রুপ
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61559358523128" target="_blank" rel="noopener noreferrer" title="অফিসিয়াল ফেসবুক পেজ">
+                    <i class="fab fa-facebook"></i> পেজ
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Muslim Cyber Force BD. সর্বস্বত্ব সংরক্ষিত।
+        </div>
+        <div class="designer-credit">
+            This page is designed by <a href="https://chitronadi.blogspot.com/" target="_blank" rel="noopener noreferrer">AdiBhaiAlpha</a>
+        </div>
+    </div>
+</footer>
+
+    <a href="https://apk.e-droid.net/apk/app3251041-wm2fk6.apk?v=4" class="app-download" target="_blank" rel="noopener noreferrer">
+        অফিসিয়াল অ্যাপ ডাউনলোড করুন
+    </a>
+
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.service-card, .blog-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Blog post content
+            const blogPosts = {
+                'ai-cybersecurity': {
+                    title: 'সাইবার সুরক্ষায় AI এর উত্থান',
+                    content: `
+                        <p>সাইবার সুরক্ষা ক্ষেত্রে কৃত্রিম বুদ্ধিমত্তা (AI) একটি বিপ্লবী পরিবর্তন আনছে। এই প্রযুক্তি সাইবার হুমকি সনাক্তকরণ, প্রতিরোধ এবং প্রতিক্রিয়া প্রক্রিয়াকে উল্লেখযোগ্যভাবে উন্নত করছে।</p>
+
+                        <h3 class="highlight">AI-এর প্রভাব</h3>
+                        <ul>
+                            <li><strong>দ্রুত সনাক্তকরণ:</strong> AI সিস্টেম রিয়েল-টাইমে অস্বাভাবিক প্যাটার্ন চিহ্নিত করতে পারে।</li>
+                            <li><strong>প্রিডিক্টিভ অ্যানালিসিস:</strong> ভবিষ্যতের হুমকি পূর্বাভাস দেওয়ার ক্ষমতা।</li>
+                            <li><strong>স্বয়ংক্রিয় প্রতিক্রিয়া:</strong> হুমকির বিরুদ্ধে তাৎক্ষণিক পদক্ষেপ নেওয়া।</li>
+                        </ul>
+
+                        <h3 class="highlight">চ্যালেঞ্জ এবং সমাধান</h3>
+                        <p>AI-এর ব্যবহার নিয়ে কিছু উদ্বেগও রয়েছে:</p>
+                        <ul>
+                            <li><strong>ডেটা গোপনীয়তা:</strong> AI সিস্টেমের জন্য বৃহৎ পরিমাণ ডেটা প্রয়োজন।</li>
+                            <li><strong>ভুল ইতিবাচক:</strong> AI সিস্টেম কখনও কখনও বৈধ ক্রিয়াকলাপকে হুমকি হিসেবে ভুল চিহ্নিত করতে পারে।</li>
+                        </ul>
+
+                        <p>এই চ্যালেঞ্জগুলি মোকাবেলায় নিরন্তর গবেষণা এবং উন্নয়ন চলছে।</p>
+
+                        <h3 class="highlight">ভবিষ্যতের দৃষ্টিভঙ্গি</h3>
+                        <p>AI সাইবার সুরক্ষার ভবিষ্যৎ। এটি প্রতিরক্ষা ব্যবস্থাকে আরও শক্তিশালী, প্রতিক্রিয়াশীল এবং কার্যকর করে তুলছে। সংস্থাগুলোর AI-ভিত্তিক সমাধান গ্রহণ করা এবং তাদের সাইবার সুরক্ষা কৌশলে AI কে অন্তর্ভুক্ত করা গুরুত্বপূর্ণ।</p>
+                    `
+                },
+                'network-security': {
+                    title: 'আপনার নেটওয়ার্ক সুরক্ষিত করার ৫টি অপরিহার্য পদক্ষেপ',
+                    content: `
+                        <p>আপনার প্রতিষ্ঠানের নেটওয়ার্ক সুরক্ষা নিশ্চিত করা একটি জটিল কাজ হতে পারে। এখানে পাঁচটি মৌলিক পদক্ষেপ রয়েছে যা আপনি আপনার নেটওয়ার্ক সুরক্ষিত করতে নিতে পারেন:</p>
+
+                        <h3 class="highlight">১. শক্তিশালী ফায়ারওয়াল ব্যবহার করুন</h3>
+                        <p>একটি শক্তিশালী ফায়ারওয়াল আপনার নেটওয়ার্কের প্রথম প্রতিরক্ষা লাইন। এটি অননুমোদিত অ্যাক্সেস প্রতিরোধ করে এবং সন্দেহজনক ট্র্যাফিক ফিল্টার করে।</p>
+
+                        <h3 class="highlight">২. নিয়মিত সফটওয়্যার আপডেট করুন</h3>
+                        <p>সব সিস্টেম এবং সফটওয়্যার আপ টু ডেট রাখুন। আপডেটগুলি প্রায়শই নিরাপত্তা ত্রুটি ঠিক করে এবং নতুন সুরক্ষা বৈশিষ্ট্য যোগ করে।</p>
+
+                        <h3 class="highlight">৩. শক্তিশালী পাসওয়ার্ড নীতি প্রয়োগ করুন</h3>
+                        <p>জটিল পাসওয়ার্ড ব্যবহার করা এবং নিয়মিত পাসওয়ার্ড পরিবর্তন করা নিশ্চিত করুন। দ্বি-ফ্যাক্টর প্রমাণীকরণ ব্যবহার করার কথা বিবেচনা করুন।</p>
+
+                        <h3 class="highlight">৪. কর্মীদের প্রশিক্ষণ দিন</h3>
+                        <p>আপনার কর্মীদের সাইবার সুরক্ষা সম্পর্কে শিক্ষিত করুন। তারা যেন ফিশিং প্রচেষ্টা চিহ্নিত করতে পারে এবং ভাল সাইবার স্বাস্থ্যবিধি অনুশীলন করে তা নিশ্চিত করুন।</p>
+
+                        <h3 class="highlight">৫. নিয়মিত সুরক্ষা অডিট পরিচালনা করুন</h3>
+                        <p>আপনার নেটওয়ার্কের দুর্বলতা চিহ্নিত করতে নিয়মিত সুরক্ষা অডিট পরিচালনা করুন। এটি আপনাকে সম্ভাব্য ঝুঁকি মোকাবেলা করতে সাহায্য করবে।</p>
+
+                        <p>এই পদক্ষেপগুলি অনুসরণ করে, আপনি আপনার নেটওয়ার্কের নিরাপত্তা উল্লেখযোগ্যভাবে বাড়াতে পারেন। মনে রাখবেন, সাইবার সুরক্ষা একটি চলমান প্রক্রিয়া - সতর্ক থাকুন এবং আপনার সুরক্ষা ব্যবস্থা নিয়মিত পর্যালোচনা করুন।</p>
+                    `
+                },
+                'encryption': {
+                    title: 'এন্ড-টু-এন্ড এনক্রিপশনের গুরুত্ব',
+                    content: `
+                        <p>এন্ড-টু-এন্ড এনক্রিপশন (E2EE) হল একটি নিরাপদ যোগাযোগ পদ্ধতি যা নিশ্চিত করে যে কেবল প্রেরক এবং প্রাপকই বার্তার বিষয়বস্তু পড়তে পারে। এটি ডিজিটাল যোগাযোগের গোপনীয়তা এবং নিরাপত্তা নিশ্চিত করার জন্য অত্যন্ত গুরুত্বপূর্ণ।</p>
+
+                        <h3 class="highlight">E2EE কীভাবে কাজ করে</h3>
+                        <p>E2EE-তে, বার্তা প্রেরকের ডিভাইসে এনক্রিপ্ট করা হয় এবং কেবল প্রাপকের ডিভাইসে ডিক্রিপ্ট করা হয়। এর মানে হল পথের মধ্যে কোনো তৃতীয় পক্ষ, এমনকি পরিষেবা প্রদানকারীও, বার্তার বিষয়বস্তু পড়তে পারে না।</p>
+
+                        <h3 class="highlight">E2EE-এর সুবিধা</h3>
+                        <ul>
+                            <li><strong>গোপনীয়তা:</strong> আপনার যোগাযোগ ব্যক্তিগত রাখে।</li>
+                            <li><strong>নিরাপত্তা:</strong> অননুমোদিত অ্যাক্সেস থেকে তথ্য রক্ষা করে।</li>
+                            <li><strong>সততা:</strong> নিশ্চিত করে যে বার্তা পরিবর্তন করা হয়নি।</li>
+                        </ul>
+
+                        <h3 class="highlight">E2EE-এর প্রয়োগ</h3>
+                        <p>E2EE ব্যাপকভাবে ব্যবহৃত হয়:</p>
+                        <ul>
+                            <li>বার্তা অ্যাপ (যেমন WhatsApp, Signal)</li>
+                            <li>ইমেইল পরিষেবা</li>
+                            <li>ফাইল শেয়ারিং প্ল্যাটফর্ম</li>
+                            <li>ভিডিও কনফারেন্সিং টুল</li>
+                        </ul>
+
+                        <h3 class="highlight">চ্যালেঞ্জ এবং বিতর্ক</h3>
+                        <p>E2EE নিয়ে কিছু বিতর্কও রয়েছে। কিছু সরকার এবং আইন প্রয়োগকারী সংস্থা উদ্বেগ প্রকাশ করেছে যে E2EE অপরাধীদের তাদের কার্যকলাপ লুকাতে সাহায্য করতে পারে। তবে, বেশিরভাগ সাইবার নিরাপত্তা বিশেষজ্ঞরা মনে করেন যে E2EE-এর সুবিধা এর সম্ভাব্য অপব্যবহারের ঝুঁকির চেয়ে বেশি।</p>
+
+                        <h3 class="highlight">উপসংহার</h3>
+                        <p>ডিজিটাল যুগে, E2EE আমাদের অনলাইন যোগাযোগের গোপনীয়তা এবং নিরাপত্তা রক্ষার জন্য অপরিহার্য। এটি ব্যক্তি, ব্যবসা এবং সরকারের জন্য সংবেদনশীল তথ্য সুরক্ষিত রাখার একটি শক্তিশালী উপায় প্রদান করে।</p>
+                    `
+                }
+            };
+
+            // Modal functionality
+            const modal = document.getElementById("blogModal");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalContent = document.getElementById("modalContent");
+            const span = document.getElementsByClassName("close")[0];
+
+            document.querySelectorAll('.read-more').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const postId = e.target.getAttribute('data-post');
+                    const post = blogPosts[postId];
+                    modalTitle.textContent = post.title;
+                    modalContent.innerHTML = post.content;
+                    modal.style.display = "block";
+                });
+            });
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
